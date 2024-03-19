@@ -73,15 +73,27 @@ namespace GridDemo
             txtGender.Text = string.Empty;
             cmbCountry.Text = string.Empty;
         }
-
-        private void cmbCountries_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            Search(cmbCountry.SelectedValue.ToString());
-        }
         public void Search(string searchFor)
         {
             var result = personList.Where(p => p.Country.Equals(searchFor)).ToList();
             dataGrid.ItemsSource = result;
+        }
+
+        private void dataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Person person = dataGrid.SelectedItem as Person;
+            txtName.Text = person.Name;
+            txtAge.Text = person.Age.ToString();
+            txtGender.Text = person.Gender;
+            cmbCountry.Text = person.Country;
+
+            //dataGrid.Items.Clear();
+            //BindGrid();
+        }
+
+        private void btnSearch_Click(object sender, RoutedEventArgs e)
+        {
+            Search(cmbCountry.SelectedValue.ToString());
         }
     }
 }

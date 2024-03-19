@@ -20,5 +20,9 @@ namespace GridDemo.Models
             Gender = gender;
             Country = country;
         }
+        public override string ToString()
+        {
+            return $"{this.Name} {this.Age} {this.Gender} {this.Country}";
+        }
     }
 }
