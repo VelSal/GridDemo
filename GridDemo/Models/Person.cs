@@ -11,12 +11,14 @@ namespace GridDemo.Models
         public string Name { get; set; }
         public int Age { get; set; }
         public string Gender { get; set; }
+        public string Country { get; set; }
 
-        public Person(string name, int age, string gender)
+        public Person(string name, int age, string gender, string country)
         {
             Name = name;
             Age = age;
             Gender = gender;
+            Country = country;
         }
     }
 }

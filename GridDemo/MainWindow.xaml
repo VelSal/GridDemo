@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GridDemo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="800"
+        Background="LightBlue">
 
-    </Grid>
+    <Viewbox Stretch="Uniform">
+        <Grid>
+            <TextBlock x:Name="lblTitle" HorizontalAlignment="Center" Margin="0,29,0,0" TextWrapping="Wrap" Text="·×·  First DataGrid  ·×·" 
+                       VerticalAlignment="Top" FontSize="30" FontWeight="Bold" Height="40" Width="304" TextDecorations="Underline,OverLine,Baseline"/>
+
+            <TextBlock x:Name="lblName" HorizontalAlignment="Left" Margin="56,100,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" FontSize="20" FontWeight="DemiBold" Height="41" Width="65"/>
+            <TextBox x:Name="txtName" HorizontalAlignment="Left" Margin="155,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" FontSize="20" Height="44"/>
+            <TextBlock x:Name="lblAge" HorizontalAlignment="Left"  Margin="56,157,0,0" TextWrapping="Wrap" Text="Age" VerticalAlignment="Top" FontSize="20" FontWeight="DemiBold" Height="40" Width="44"/>
+            <TextBox x:Name="txtAge" HorizontalAlignment="Left" Margin="155,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" FontSize="20" Height="44"/>
+            <TextBlock x:Name="lblGender" HorizontalAlignment="Left" Margin="56,212,0,0" TextWrapping="Wrap" Text="Gender" VerticalAlignment="Top" FontSize="20" FontWeight="DemiBold" Height="41" Width="79"/>
+            <TextBox x:Name="txtGender" HorizontalAlignment="Left" Margin="155,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" FontSize="20" Height="43"/>
+            <Button x:Name="btnInsert" Content="Insert" HorizontalAlignment="Left" Margin="56,316,0,0" VerticalAlignment="Top" Width="276" Height="37" FontSize="25" FontStyle="Italic" FontWeight="Black" Click="btnInsert_Click"/>
+
+            
+            <DataGrid x:Name="dataGrid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="366,100,41,123" Height="252" VerticalAlignment="Top"/>
+            <TextBlock x:Name="lblCountry" HorizontalAlignment="Left" Margin="56,264,0,0" TextWrapping="Wrap" Text="Country" VerticalAlignment="Top" FontSize="20" FontWeight="DemiBold" Height="40" Width="79"/>
+            <ComboBox x:Name="cmbCountry" HorizontalAlignment="Left" Margin="155,268,0,0" VerticalAlignment="Top" Width="177" Height="32" SelectionChanged="cmbCountries_SelectionChanged" />
+        </Grid>
+    </Viewbox>
 </Window>
